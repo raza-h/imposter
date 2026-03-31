@@ -146,8 +146,8 @@
 }
 
 .word-display.imposter-word {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
 }
 
 .word-label {
@@ -170,6 +170,12 @@
   font-size: 0.95rem;
   opacity: 0.95;
   font-style: italic;
+}
+
+.word-value.no-word {
+  font-size: 1.8rem;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 .special-info {

@@ -70,8 +70,8 @@ const RoleReveal = ({ gameData, onComplete }) => {
                 ) : (
                   <div className="word-display imposter-word">
                     <div className="word-label">Your Word:</div>
-                    <div className="word-value">{currentPlayer.imposterWord}</div>
-                    <div className="imposter-note">(You don't know the real word)</div>
+                    <div className="word-value no-word">No Word</div>
+                    <div className="imposter-note">You don't know the secret word. Blend in and avoid suspicion!</div>
                   </div>
                 )}
               </div>
@@ -83,14 +83,7 @@ const RoleReveal = ({ gameData, onComplete }) => {
                 </div>
               )}
 
-              {currentPlayer.role === 'jester' && (
-                <div className="special-info warning">
-                  <div className="special-label">⚠️ Your Goal:</div>
-                  <div className="special-value">
-                    Get voted out to win alone!
-                  </div>
-                </div>
-              )}
+
             </div>
 
             <div className="navigation-buttons">

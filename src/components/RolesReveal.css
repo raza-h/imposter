@@ -90,7 +90,7 @@
 }
 
 .word-reveal.imposter-reveal {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
 }
 
 .word-label-reveal {
@@ -115,6 +115,12 @@
   margin-top: 10px;
   opacity: 0.95;
   font-style: italic;
+}
+
+.word-value-reveal.no-word-reveal {
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 .special-info-reveal {

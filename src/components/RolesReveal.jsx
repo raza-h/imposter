@@ -26,8 +26,8 @@ const RolesReveal = ({ gameData, onBack }) => {
                 </div>
               ) : (
                 <div className="word-reveal imposter-reveal">
-                  <span className="word-label-reveal">Fake Word:</span>
-                  <span className="word-value-reveal">{player.imposterWord}</span>
+                  <span className="word-label-reveal">Word:</span>
+                  <span className="word-value-reveal no-word-reveal">No Word</span>
                   <span className="imposter-note-reveal">(Real word: {gameData.word})</span>
                 </div>
               )}
@@ -50,4 +50,6 @@ const RolesReveal = ({ gameData, onBack }) => {
 }
 
 export default RolesReveal
+
+
 

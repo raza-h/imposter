@@ -3,9 +3,9 @@ export const gameModes = {
   specialRoles: {
     id: 'specialRoles',
     name: 'Special Roles',
-    description: 'Play with Bodyguard and Jester',
+    description: 'Play with Imposter and Bodyguard',
     minPlayers: 4,
-    maxPlayers: 10,
+    maxPlayers: 16,
     roles: {
       civilian: {
         name: 'Civilian',
@@ -22,11 +22,6 @@ export const gameModes = {
         description: 'You know the word AND who the Imposter is. Help the Imposter win by casting suspicion on others!',
         hasWord: true,
       },
-      jester: {
-        name: 'The Jester',
-        description: 'You know the word but want to be voted out. If the group votes for you, you win alone!',
-        hasWord: true,
-      },
     },
     roleDistribution: (playerCount) => {
       // Calculate role distribution based on player count
@@ -40,10 +35,6 @@ export const gameModes = {
         if (playerCount >= 6) {
           roles.push('bodyguard');
         }
-        if (playerCount >= 7) {
-          roles.push('jester');
-        }
-        
         // Fill rest with civilians
         while (roles.length < playerCount) {
           roles.push('civilian');

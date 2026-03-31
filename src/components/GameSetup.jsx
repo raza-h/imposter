@@ -62,7 +62,7 @@ const GameSetup = ({ onStart }) => {
         roleName: role.name,
         roleDescription: role.description,
         word: role.hasWord ? wordData.word : null,
-        imposterWord: !role.hasWord ? wordData.imposters[Math.floor(Math.random() * wordData.imposters.length)] : null,
+        imposterWord: null,
         knowsImposter: roleKey === 'bodyguard' ? imposterPlayer : null,
       }
     })

@@ -175,6 +175,56 @@ export const wordLists = {
   ],
 };
 
+// Challenge modifiers — public roles shown to everyone after secret roles are assigned
+export const challengeModifiers = [
+  {
+    id: 'timer',
+    name: 'Timer',
+    description: 'You can only speak for 15 seconds per turn.',
+    emoji: '⏱️',
+  },
+  {
+    id: 'peacemaker',
+    name: 'Peacemaker',
+    description: 'If two players argue, you must calm things down before the game continues.',
+    emoji: '🕊️',
+  },
+  {
+    id: 'poet',
+    name: 'Poet',
+    description: 'Every clue you give must rhyme with your previous one.',
+    emoji: '📝',
+  },
+  {
+    id: 'mime',
+    name: 'Mime',
+    description: 'You cannot speak. Use gestures and expressions only.',
+    emoji: '🤫',
+  },
+  {
+    id: 'angry',
+    name: 'Angry Person',
+    description: 'You must stay angry and aggressive during the entire game.',
+    emoji: '😡',
+  },
+  {
+    id: 'whisperer',
+    name: 'Whisperer',
+    description: 'You must speak in a whisper the entire game.',
+    emoji: '🤐',
+  },
+];
+
+// Assign random unique challenge modifiers to players
+export const assignChallenges = (playerCount) => {
+  const shuffled = [...challengeModifiers].sort(() => Math.random() - 0.5);
+  const assignments = [];
+  for (let i = 0; i < playerCount; i++) {
+    assignments.push(shuffled[i % shuffled.length]);
+  }
+  return assignments;
+};
+
 // Get random word pair
 export const getRandomWord = (difficulty = 'easy') => {
   const list = wordLists[difficulty] || wordLists.easy;

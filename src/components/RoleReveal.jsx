@@ -83,7 +83,15 @@ const RoleReveal = ({ gameData, onComplete }) => {
                 </div>
               )}
 
-
+              {currentPlayer.challenge && (
+                <div className="challenge-section">
+                  <div className="challenge-label">Your Challenge</div>
+                  <div className="challenge-name">
+                    {currentPlayer.challenge.emoji} {currentPlayer.challenge.name}
+                  </div>
+                  <div className="challenge-desc">{currentPlayer.challenge.description}</div>
+                </div>
+              )}
             </div>
 
             <div className="navigation-buttons">
@@ -104,4 +112,3 @@ const RoleReveal = ({ gameData, onComplete }) => {
 }
 
 export default RoleReveal
-

@@ -70,6 +70,16 @@
   transform: translateY(0) scale(0.98);
 }
 
+.challenges-button {
+  background: rgba(255, 140, 0, 0.3);
+  border-color: #FFA500;
+}
+
+.challenges-button:hover {
+  background: rgba(255, 140, 0, 0.4);
+  border-color: #FFB733;
+}
+
 .reveal-button {
   background: rgba(211, 47, 47, 0.3);
   border-color: #ff4444;

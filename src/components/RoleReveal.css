@@ -108,14 +108,14 @@
   text-align: center;
   margin-bottom: 25px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #8B0000;
+  border-bottom: 3px solid #008080;
 }
 
 .role-name {
   font-size: 2rem;
   color: #333;
   font-weight: 800;
-  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  background: linear-gradient(135deg, #008080 0%, #20B2AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,17 +137,17 @@
 }
 
 .word-display {
-  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  background: linear-gradient(135deg, #008080 0%, #20B2AA 100%);
   border-radius: 15px;
   padding: 25px;
   text-align: center;
   color: white;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 128, 128, 0.3);
 }
 
 .word-display.imposter-word {
-  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
-  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+  background: linear-gradient(135deg, #2F4F4F 0%, #556B6B 100%);
+  box-shadow: 0 8px 25px rgba(47, 79, 79, 0.3);
 }
 
 .word-label {
@@ -179,8 +179,8 @@
 }
 
 .special-info {
-  background: rgba(102, 126, 234, 0.1);
-  border-left: 4px solid #8B0000;
+  background: rgba(0, 128, 128, 0.1);
+  border-left: 4px solid #008080;
   border-radius: 10px;
   padding: 15px;
   margin-top: 15px;
@@ -209,6 +209,36 @@
   color: #333;
   line-height: 1.5;
   font-weight: 500;
+}
+
+.challenge-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%);
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+}
+
+.challenge-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.challenge-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.challenge-desc {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
 }
 
 .navigation-buttons {
@@ -243,7 +273,7 @@
 
 .next-button {
   background: rgba(255, 255, 255, 0.95);
-  color: #8B0000;
+  color: #008080;
   border: 2px solid transparent;
   font-weight: 700;
 }
@@ -288,6 +318,10 @@
 
   .word-value {
     font-size: 2rem;
+  }
+
+  .challenge-name {
+    font-size: 1.3rem;
   }
 
   .nav-button {
@@ -350,6 +384,18 @@
     font-size: 0.95rem;
   }
 
+  .challenge-section {
+    padding: 15px;
+  }
+
+  .challenge-name {
+    font-size: 1.2rem;
+  }
+
+  .challenge-desc {
+    font-size: 0.85rem;
+  }
+
   .navigation-buttons {
     gap: 10px;
   }
@@ -371,4 +417,3 @@
     padding: 20px;
   }
 }
-

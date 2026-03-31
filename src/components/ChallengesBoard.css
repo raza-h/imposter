@@ -1,0 +1,166 @@
+.challenges-board {
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.challenges-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.challenges-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.challenges-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+}
+
+.challenges-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.challenge-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challenge-card-player {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.challenge-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+.challenge-card-emoji {
+  font-size: 1.5rem;
+}
+
+.challenge-card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.challenge-card-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.challenges-done-btn {
+  width: 100%;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #008080;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-top: auto;
+  transition: all 0.3s;
+}
+
+.challenges-done-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.challenges-done-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .challenges-board {
+    padding: 15px;
+  }
+
+  .challenges-header h1 {
+    font-size: 2rem;
+  }
+
+  .challenge-card {
+    padding: 15px;
+  }
+
+  .challenge-card-player {
+    font-size: 1.1rem;
+  }
+
+  .challenge-card-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .challenges-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .challenges-subtitle {
+    font-size: 1rem;
+  }
+
+  .challenge-card {
+    padding: 12px 15px;
+    gap: 8px;
+  }
+
+  .challenge-card-player {
+    font-size: 1rem;
+  }
+
+  .challenge-card-badge {
+    padding: 8px 12px;
+  }
+
+  .challenge-card-emoji {
+    font-size: 1.3rem;
+  }
+
+  .challenge-card-name {
+    font-size: 0.95rem;
+  }
+
+  .challenge-card-desc {
+    font-size: 0.85rem;
+  }
+
+  .challenges-done-btn {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+}

@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { gameModes, getRandomWord } from '../gameModes'
+import { gameModes, getRandomWord, assignChallenges } from '../gameModes'
 import './GameSetup.css'
 
 const GameSetup = ({ onStart }) => {
   const [players, setPlayers] = useState([''])
   const [selectedMode, setSelectedMode] = useState('specialRoles')
   const [difficulty, setDifficulty] = useState('easy')
+  const [challengeMode, setChallengeMode] = useState(false)
 
   const handlePlayerChange = (index, value) => {
     const newPlayers = [...players]
@@ -37,21 +38,18 @@ const GameSetup = ({ onStart }) => {
       return
     }
 
-    // Shuffle players
     const shuffledPlayers = [...validPlayers].sort(() => Math.random() - 0.5)
     
-    // Get roles for this game mode
     const roleList = gameModes[selectedMode].roleDistribution(validPlayers.length)
     const shuffledRoles = [...roleList].sort(() => Math.random() - 0.5)
     
-    // Get word
     const wordData = getRandomWord(difficulty)
     
-    // Find the imposter player first
     const imposterIndex = shuffledRoles.indexOf('imposter')
     const imposterPlayer = imposterIndex !== -1 ? shuffledPlayers[imposterIndex] : null
     
-    // Assign roles to players
+    const challenges = challengeMode ? assignChallenges(validPlayers.length) : null
+    
     const playerRoles = shuffledPlayers.map((player, index) => {
       const roleKey = shuffledRoles[index]
       const role = gameModes[selectedMode].roles[roleKey]
@@ -64,6 +62,7 @@ const GameSetup = ({ onStart }) => {
         word: role.hasWord ? wordData.word : null,
         imposterWord: null,
         knowsImposter: roleKey === 'bodyguard' ? imposterPlayer : null,
+        challenge: challenges ? challenges[index] : null,
       }
     })
 
@@ -73,6 +72,7 @@ const GameSetup = ({ onStart }) => {
       players: playerRoles,
       word: wordData.word,
       difficulty,
+      challengeMode,
     })
   }
 
@@ -132,6 +132,24 @@ const GameSetup = ({ onStart }) => {
       </div>
 
       <div className="setup-section">
+        <h2>Challenge Mode</h2>
+        <div 
+          className={`challenge-toggle ${challengeMode ? 'active' : ''}`}
+          onClick={() => setChallengeMode(!challengeMode)}
+        >
+          <div className="challenge-toggle-info">
+            <div className="challenge-toggle-label">Enable Challenges</div>
+            <div className="challenge-toggle-desc">
+              Each player gets a public challenge (Timer, Mime, Poet, etc.) shown to everyone after roles are assigned
+            </div>
+          </div>
+          <div className={`toggle-switch ${challengeMode ? 'on' : ''}`}>
+            <div className="toggle-knob" />
+          </div>
+        </div>
+      </div>
+
+      <div className="setup-section">
         <div className="players-header">
           <h2>Players ({playerCount})</h2>
           <button className="add-player-btn" onClick={addPlayer}>
@@ -175,4 +193,3 @@ const GameSetup = ({ onStart }) => {
 }
 
 export default GameSetup
-

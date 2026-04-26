@@ -1,16 +1,58 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
+
+const manifestForPlugIn = {
+  registerType: "prompt",
+  includeAssests: ["favicon.ico", "apple-touc-icon.png", "masked-icon.svg"],
+  manifest: {
+    name: "React-vite-app",
+    short_name: "react-vite-app",
+    description: "I am a simple vite app",
+    icons: [
+      {
+        src: "/favicon.webp",
+        sizes: "192x192",
+        type: "image/webp",
+        purpose: "favicon",
+      },
+      {
+        src: "/maskable-icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "favicon",
+      },
+      {
+        src: "/maskable-icon-180.png",
+        sizes: "180x180",
+        type: "image/png",
+        purpose: "apple touch icon",
+      },
+      {
+        src: "/maskable-icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any maskable",
+      },
+    ],
+    theme_color: "#171717",
+    background_color: "#f0e7db",
+    display: "standalone",
+    scope: "/",
+    start_url: "/",
+    orientation: "portrait",
+  },
+};
 
 // Must match your GitHub repo name (path after github.io). Change if repo is renamed.
-const GH_PAGES_BASE = '/saimposter/'
+const GH_PAGES_BASE = "/saimposter/";
 
 export default defineConfig(({ command }) => ({
   // Dev: '/' so http://localhost:4000/ works. Build: subpath for GitHub Pages project sites.
-  base: command === 'build' ? GH_PAGES_BASE : '/',
-  plugins: [react()],
+  base: command === "build" ? GH_PAGES_BASE : "/",
+  plugins: [react(), VitePWA(manifestForPlugIn)],
   server: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 4000,
   },
-}))
-
+}));

@@ -3,11 +3,11 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 // Must match your GitHub repo name (path after github.io). Change if repo is renamed.
-const GH_PAGES_BASE = "/saimposter/";
+// const GH_PAGES_BASE = "/saimposter/";
 
 export default defineConfig(({ command }) => {
   // Dev: '/' so http://localhost:4000/ works. Build: subpath for GitHub Pages project sites.
-  const base = command === "build" ? GH_PAGES_BASE : "/";
+  const base = "/";
   
   const pwaConfig = {
     registerType: "autoUpdate",

@@ -7,7 +7,7 @@ const GH_PAGES_BASE = "/saimposter/";
 
 export default defineConfig(({ command }) => {
   // Dev: '/' so http://localhost:4000/ works. Build: subpath for GitHub Pages project sites.
-  const base = command === "build" ? GH_PAGES_BASE : "/";
+  const base = '/';
   
   const pwaConfig = {
     registerType: "autoUpdate",
